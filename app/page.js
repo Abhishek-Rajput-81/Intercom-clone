@@ -121,7 +121,6 @@ Whether you’re looking for how-to guides, troubleshooting help, or just need t
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 to-white flex items-center justify-center">
       <div className="flex w-full h-screen shadow-2xl rounded-2xl overflow-hidden border border-violet-100 bg-white">
-       
         {/* Left Sidebar */}
         <aside className="w-[320px] bg-white border-r border-gray-200 flex flex-col text-sm font-sans">
           <div className="h-[56px] px-4 flex items-center font-semibold text-gray-900 text-[30px] font-bold border-b border-gray-200">
@@ -283,7 +282,7 @@ Whether you’re looking for how-to guides, troubleshooting help, or just need t
                 name="chat"
                 autoComplete="off"
                 placeholder="Type your message..."
-                className="flex-1 py-2 rounded-md   flex-grow bg-transparent text-black outline-none text-sm placeholder-gray-700"
+                className="flex-1 py-2 rounded-md max-w-[600px] break-words flex-grow bg-transparent text-black outline-none text-sm placeholder-gray-700"
                 value={chatInput}
                 onChange={(e) => setChatInput(e.target.value)}
               />
@@ -368,7 +367,6 @@ Whether you’re looking for how-to guides, troubleshooting help, or just need t
           </form>
         </main>
 
-       
         {/* Right Side AI Copilot Panel */}
         <section className="w-[35%] bg-gradient-to-br from-white to-violet-200 flex flex-col border-l border-violet-100">
           <div className="relative bg-white border-b flex items-center px-4 h-[56px]">
@@ -438,7 +436,7 @@ Whether you’re looking for how-to guides, troubleshooting help, or just need t
                 {aiMessages.map((msg, idx) =>
                   msg.from === "user" ? (
                     <div key={idx} className="flex items-start gap-3">
-                      <div className="w-22 h-8 rounded-full flex items-center justify-center mt-1">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center mt-1 ml-[-4px]">
                         <Image
                           src="/user.png"
                           alt="User"
@@ -480,6 +478,12 @@ Whether you’re looking for how-to guides, troubleshooting help, or just need t
                           }}
                         >
                           {msg.text}
+                      <button
+                        className="w-[80%] text-[15px] mt-4 ml-12 px-3 py-1 rounded-lg bg-white text-black text-sm font-semibold hover:bg-violet-200 transition"
+                        onClick={() => setChatInput(msg.text)}
+                      >
+                        Add to composer
+                      </button>
                         </div>
                       </div>
                     </div>
