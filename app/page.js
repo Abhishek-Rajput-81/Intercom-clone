@@ -438,7 +438,7 @@ Whether you’re looking for how-to guides, troubleshooting help, or just need t
                 {aiMessages.map((msg, idx) =>
                   msg.from === "user" ? (
                     <div key={idx} className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center mt-1">
+                      <div className="w-22 h-8 rounded-full flex items-center justify-center mt-1">
                         <Image
                           src="/user.png"
                           alt="User"
